@@ -1,0 +1,29 @@
+.loan-form-container {
+  background-color: #111111;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.loan-form-hr {
+  width: 80%;
+}
+
+.loan-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.loan-form-salary {
+  margin-bottom: 20px;
+}
+
+.loan-form-submit {
+  padding: 10px 20px;
+}

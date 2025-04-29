@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './LoanForm.css'; // Import the CSS file
 
 function LoanForm() {
   const [formData, setFormData] = useState({
@@ -10,48 +11,28 @@ function LoanForm() {
   });
   const [isFormValid, setIsFormValid] = useState(false);
 
-  // Check if all required fields are filled
   useEffect(() => {
     const { name, phone, age, salary } = formData;
     setIsFormValid(
       name.trim() !== '' &&
-      phone.trim() !== '' &&
-      age.trim() !== '' &&
-      salary.trim() !== ''
+        phone.trim() !== '' &&
+        age.trim() !== '' &&
+        salary.trim() !== ''
     );
   }, [formData]);
 
   return (
-    <div
-      style={{
-        backgroundColor: '#111111',
-        textAlign: 'center',
-        width: '50%',
-        margin: 'auto',
-        padding: '20px',
-        borderRadius: '20px',
-      }}
-    >
+    <div className="loan-form-container">
       <form
         onSubmit={(event) => {
           event.preventDefault();
-
           alert('Form submitted successfully!');
         }}
       >
         <h1>Requesting a Loan</h1>
-        <hr style={{ width: '80%' }} />
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            padding: '10px',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <label htmlFor="">Name</label>
+        <hr className="loan-form-hr" />
+        <div className="loan-form-group">
+          <label>Name</label>
           <input
             type="text"
             value={formData.name}
@@ -60,17 +41,8 @@ function LoanForm() {
             }}
           />
         </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            padding: '10px',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <label htmlFor="">Phone</label>
+        <div className="loan-form-group">
+          <label>Phone</label>
           <input
             type="tel"
             minLength={10}
@@ -81,17 +53,8 @@ function LoanForm() {
             }}
           />
         </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            padding: '10px',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <label htmlFor="">Age</label>
+        <div className="loan-form-group">
+          <label>Age</label>
           <input
             type="number"
             value={formData.age}
@@ -99,21 +62,11 @@ function LoanForm() {
             max={100}
             onChange={(event) => {
               setFormData({ ...formData, age: event.target.value });
-              
             }}
           />
         </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            padding: '10px',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <label htmlFor="">Are you an employee?</label>
+        <div className="loan-form-group">
+          <label>Are you an employee?</label>
           <input
             type="checkbox"
             checked={formData.isEmployee}
@@ -122,18 +75,8 @@ function LoanForm() {
             }}
           />
         </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            padding: '10px',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom: '20px',
-          }}
-        >
-          <label htmlFor="">Salary</label>
+        <div className="loan-form-group loan-form-salary">
+          <label>Salary</label>
           <select
             value={formData.salary}
             onChange={(event) => {
@@ -145,7 +88,7 @@ function LoanForm() {
             <option>above $2000</option>
           </select>
         </div>
-        <button style={{ padding: '10px 20px' }} disabled={!isFormValid}>
+        <button className="loan-form-submit" disabled={!isFormValid}>
           Submit
         </button>
       </form>
