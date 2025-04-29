@@ -1,4 +1,16 @@
+import { useState } from "react";
+
 function LoanForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    age: '',
+    isEmployee: false,
+    salary: 'less than $500',
+  });
+  const [isFormValid, setIsFormValid] = useState(false);
+
+
   return (
     <div style={{ backgroundColor: '#111111', textAlign: 'center', width: '50%', margin: 'auto', padding: '20px', borderRadius: '20px' }}>
       <form>
@@ -74,7 +86,7 @@ function LoanForm() {
             <option>above $2000</option>
           </select>
         </div>
-        <button style={{padding:'10px 20px'}} disabled={true} >Submit</button>
+        <button style={{padding:'10px 20px'}} disabled={!isFormValid} >Submit</button>
       </form>
     </div>
   );
