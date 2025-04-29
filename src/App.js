@@ -8,7 +8,7 @@ function App() {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100dvh',
-        backgroundColor: '#121212',
+        backgroundColor: '#181818',
         color: '#fff',
       }}
     >
