@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function LoanForm() {
   const [formData, setFormData] = useState({
@@ -10,12 +10,26 @@ function LoanForm() {
   });
   const [isFormValid, setIsFormValid] = useState(false);
 
-
   return (
-    <div style={{ backgroundColor: '#111111', textAlign: 'center', width: '50%', margin: 'auto', padding: '20px', borderRadius: '20px' }}>
-      <form>
+    <div
+      style={{
+        backgroundColor: '#111111',
+        textAlign: 'center',
+        width: '50%',
+        margin: 'auto',
+        padding: '20px',
+        borderRadius: '20px',
+      }}
+    >
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+
+          alert('Form submitted successfully!');
+        }}
+      >
         <h1>Requesting a Loan</h1>
-        <hr style={{width:'80%'}}/>
+        <hr style={{ width: '80%' }} />
         <div
           style={{
             display: 'flex',
@@ -27,10 +41,13 @@ function LoanForm() {
           }}
         >
           <label htmlFor="">Name</label>
-          <input type="text" value={formData.name} onChange={(event)=>{
-            setFormData({ ...formData, name: event.target.value });
-            
-          }} />
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(event) => {
+              setFormData({ ...formData, name: event.target.value });
+            }}
+          />
         </div>
         <div
           style={{
@@ -43,10 +60,13 @@ function LoanForm() {
           }}
         >
           <label htmlFor="">Phone</label>
-          <input type="tel" value={formData.phone} onChange={(event)=>{
-            setFormData({ ...formData, phone: event.target.value });
-            
-          }} />
+          <input
+            type="tel"
+            value={formData.phone}
+            onChange={(event) => {
+              setFormData({ ...formData, phone: event.target.value });
+            }}
+          />
         </div>
         <div
           style={{
@@ -59,10 +79,13 @@ function LoanForm() {
           }}
         >
           <label htmlFor="">Age</label>
-          <input type="number" value={formData.age} onChange={(event)=>{
-            setFormData({ ...formData, age: event.target.value });
-            
-          }} />
+          <input
+            type="number"
+            value={formData.age}
+            onChange={(event) => {
+              setFormData({ ...formData, age: event.target.value });
+            }}
+          />
         </div>
         <div
           style={{
@@ -95,7 +118,9 @@ function LoanForm() {
             <option>above $2000</option>
           </select>
         </div>
-        <button style={{padding:'10px 20px'}} disabled={!isFormValid} >Submit</button>
+        <button style={{ padding: '10px 20px' }} disabled={!isFormValid}>
+          Submit
+        </button>
       </form>
     </div>
   );
