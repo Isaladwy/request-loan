@@ -74,7 +74,7 @@ function LoanForm() {
             <option>above $2000</option>
           </select>
         </div>
-        <button >Submit</button>
+        <button style={{padding:'10px 20px'}} disabled={true} >Submit</button>
       </form>
     </div>
   );
