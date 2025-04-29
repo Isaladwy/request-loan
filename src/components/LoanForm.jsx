@@ -73,6 +73,8 @@ function LoanForm() {
           <label htmlFor="">Phone</label>
           <input
             type="tel"
+            minLength={10}
+            maxLength={12}
             value={formData.phone}
             onChange={(event) => {
               setFormData({ ...formData, phone: event.target.value });
