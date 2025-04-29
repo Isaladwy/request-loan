@@ -93,8 +93,11 @@ function LoanForm() {
           <input
             type="number"
             value={formData.age}
+            min={18}
+            max={100}
             onChange={(event) => {
               setFormData({ ...formData, age: event.target.value });
+              
             }}
           />
         </div>
