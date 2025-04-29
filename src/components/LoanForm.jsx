@@ -27,7 +27,10 @@ function LoanForm() {
           }}
         >
           <label htmlFor="">Name</label>
-          <input type="text" />
+          <input type="text" value={formData.name} onChange={(event)=>{
+            setFormData({ ...formData, name: event.target.value });
+            
+          }} />
         </div>
         <div
           style={{
@@ -40,7 +43,10 @@ function LoanForm() {
           }}
         >
           <label htmlFor="">Phone</label>
-          <input type="tel" />
+          <input type="tel" value={formData.phone} onChange={(event)=>{
+            setFormData({ ...formData, phone: event.target.value });
+            
+          }} />
         </div>
         <div
           style={{
@@ -53,7 +59,10 @@ function LoanForm() {
           }}
         >
           <label htmlFor="">Age</label>
-          <input type="number" />
+          <input type="number" value={formData.age} onChange={(event)=>{
+            setFormData({ ...formData, age: event.target.value });
+            
+          }} />
         </div>
         <div
           style={{
