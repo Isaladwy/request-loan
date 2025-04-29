@@ -1,9 +1,9 @@
 function LoanForm() {
   return (
-    <div style={{ backgroundColor: 'black', textAlign: 'center', width: '50%' }}>
+    <div style={{ backgroundColor: 'black', textAlign: 'center', width: '50%', margin: 'auto', padding: '20px', borderRadius: '20px' }}>
       <form>
         <h1>Requesting a Loan</h1>
-        <hr />
+        <hr style={{width:'80%'}}/>
         <div
           style={{
             display: 'flex',
