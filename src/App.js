@@ -1,3 +1,5 @@
+import LoanForm from './components/LoanForm';
+
 function App() {
   return (
     <div
@@ -8,10 +10,9 @@ function App() {
         height: '100dvh',
         backgroundColor: '#121212',
         color: '#fff',
-        
       }}
     >
-      <h1>Hello World</h1>
+      <LoanForm />
     </div>
   );
 }
