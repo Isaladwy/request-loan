@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function LoanForm() {
   const [formData, setFormData] = useState({
@@ -9,6 +9,17 @@ function LoanForm() {
     salary: 'less than $500',
   });
   const [isFormValid, setIsFormValid] = useState(false);
+
+  // Check if all required fields are filled
+  useEffect(() => {
+    const { name, phone, age, salary } = formData;
+    setIsFormValid(
+      name.trim() !== '' &&
+      phone.trim() !== '' &&
+      age.trim() !== '' &&
+      salary.trim() !== ''
+    );
+  }, [formData]);
 
   return (
     <div
@@ -98,7 +109,13 @@ function LoanForm() {
           }}
         >
           <label htmlFor="">Are you an employee?</label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={formData.isEmployee}
+            onChange={(event) => {
+              setFormData({ ...formData, isEmployee: event.target.checked });
+            }}
+          />
         </div>
         <div
           style={{
@@ -112,7 +129,12 @@ function LoanForm() {
           }}
         >
           <label htmlFor="">Salary</label>
-          <select>
+          <select
+            value={formData.salary}
+            onChange={(event) => {
+              setFormData({ ...formData, salary: event.target.value });
+            }}
+          >
             <option>less than $500</option>
             <option>between $500 and $2000</option>
             <option>above $2000</option>
