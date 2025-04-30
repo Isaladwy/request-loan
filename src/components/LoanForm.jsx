@@ -30,6 +30,9 @@ function LoanForm({ title }) {
   function handleNameChange(value) {
     setFormData({...formData, name: value });
   }
+  function handleAgeChange(value) {
+    setFormData({...formData, age: value });
+  }
 
   return (
     <div className="loan-form-container">
@@ -43,20 +46,14 @@ function LoanForm({ title }) {
       >
         <h1>Requesting a Loan</h1>
         <hr className="loan-form-hr" />
+
         <InputComponent inputName='Name' value={formData.name} handlechange={handleNameChange} />
+
         <InputComponent inputName='phone number' value={formData.phone} handlechange={handlePhoneChange} />
-        <div className="loan-form-group">
-          <label>Age</label>
-          <input
-            type="number"
-            value={formData.age}
-            min={18}
-            max={100}
-            onChange={(event) => {
-              setFormData({ ...formData, age: event.target.value });
-            }}
-          />
-        </div>
+
+        <InputComponent inputName='age' value={formData.age} handlechange={handleAgeChange} />
+
+        
         <div className="loan-form-group">
           <label>Are you an employee?</label>
           <input
