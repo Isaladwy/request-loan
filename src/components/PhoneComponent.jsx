@@ -9,7 +9,7 @@ function PhoneComponent({value, handlechange, currentInputs}) {
             maxLength={12}
             value={value}
             onChange={(event) => {
-              handlechange({ ...currentInputs, phone: event.target.value });
+              handlechange(event.target.value)
             }}
           />
         </div>
