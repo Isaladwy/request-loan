@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './LoanForm.css'; // Import the CSS file
 import PopupModel from './PopupModel';
-import PhoneComponent from './PhoneComponent';
+import InputComponent from './InputComponent';
 
 function LoanForm({ title }) {
   const [formData, setFormData] = useState({
@@ -27,6 +27,9 @@ function LoanForm({ title }) {
   function handlePhoneChange(value) {
     setFormData({...formData, phone: value });
   }
+  function handleNameChange(value) {
+    setFormData({...formData, name: value });
+  }
 
   return (
     <div className="loan-form-container">
@@ -40,17 +43,8 @@ function LoanForm({ title }) {
       >
         <h1>Requesting a Loan</h1>
         <hr className="loan-form-hr" />
-        <div className="loan-form-group">
-          <label>Name</label>
-          <input
-            type="text"
-            value={formData.name}
-            onChange={(event) => {
-              setFormData({ ...formData, name: event.target.value });
-            }}
-          />
-        </div>
-        <PhoneComponent currentInputs={formData} value={formData.phone} handlechange={handlePhoneChange} />
+        <InputComponent inputName='Name' value={formData.name} handlechange={handleNameChange} />
+        <InputComponent inputName='phone number' value={formData.phone} handlechange={handlePhoneChange} />
         <div className="loan-form-group">
           <label>Age</label>
           <input

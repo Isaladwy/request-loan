@@ -1,12 +1,9 @@
 import './LoanForm.css'
-function PhoneComponent({value, handlechange, currentInputs}) {
+function InputComponent({value, handlechange, inputName}) {
   return (
     <div className="loan-form-group">
-          <label>Phone</label>
+          <label>{inputName}</label>
           <input
-            type="tel"
-            minLength={10}
-            maxLength={12}
             value={value}
             onChange={(event) => {
               handlechange(event.target.value)
@@ -16,4 +13,4 @@ function PhoneComponent({value, handlechange, currentInputs}) {
   )
 }
 
-export default PhoneComponent
+export default InputComponent
