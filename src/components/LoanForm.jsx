@@ -45,18 +45,7 @@ function LoanForm({title}) {
             }}
           />
         </div>
-        <div className="loan-form-group">
-          <label>Phone</label>
-          <input
-            type="tel"
-            minLength={10}
-            maxLength={12}
-            value={formData.phone}
-            onChange={(event) => {
-              setFormData({ ...formData, phone: event.target.value });
-            }}
-          />
-        </div>
+        
         <div className="loan-form-group">
           <label>Age</label>
           <input
