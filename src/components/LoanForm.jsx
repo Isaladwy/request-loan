@@ -46,7 +46,7 @@ function LoanForm({ title }) {
             }}
           />
         </div>
-        <MyComponent formData={formData.phone} setFormData={setFormData} />
+        <MyComponent currentInputs={formData} value={formData.phone} handlechange={setFormData} />
         <div className="loan-form-group">
           <label>Age</label>
           <input

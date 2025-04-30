@@ -1,5 +1,5 @@
 import './LoanForm.css'
-function MyComponent({formData, setFormData}) {
+function MyComponent({value, handlechange, currentInputs}) {
   return (
     <div className="loan-form-group">
           <label>Phone</label>
@@ -7,9 +7,9 @@ function MyComponent({formData, setFormData}) {
             type="tel"
             minLength={10}
             maxLength={12}
-            value={formData.phone}
+            value={value}
             onChange={(event) => {
-              setFormData({ ...formData, phone: event.target.value });
+              handlechange({ ...currentInputs, phone: event.target.value });
             }}
           />
         </div>
