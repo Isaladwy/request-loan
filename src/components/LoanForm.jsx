@@ -11,6 +11,7 @@ function LoanForm() {
     salary: 'less than $500',
   });
   const [isFormValid, setIsFormValid] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const { name, phone, age, salary } = formData;
@@ -27,6 +28,8 @@ function LoanForm() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
+          setShowPopup(true);
+          setTimeout(() => setShowPopup(false), 2000); // Hide popup after 2 seconds
         }}
       >
         <h1>Requesting a Loan</h1>
@@ -92,7 +95,7 @@ function LoanForm() {
           Submit
         </button>
       </form>
-      <PopupModel />
+      <PopupModel show={showPopup} />
     </div>
   );
 }
