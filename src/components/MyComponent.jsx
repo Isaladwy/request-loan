@@ -1,3 +1,4 @@
+import './LoanForm.css'
 function MyComponent({formData, setFormData}) {
   return (
     <div className="loan-form-group">
