@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './LoanForm.css'; // Import the CSS file
 import PopupModel from './PopupModel';
 
-function LoanForm() {
+function LoanForm({title}) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -25,6 +25,7 @@ function LoanForm() {
 
   return (
     <div className="loan-form-container">
+      <h1>{title}</h1>
       <form
         onSubmit={(event) => {
           event.preventDefault();

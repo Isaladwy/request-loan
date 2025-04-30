@@ -1,6 +1,7 @@
 import LoanForm from './components/LoanForm';
 
 function App() {
+  const title = 'Loan Project';
   return (
     <div
       style={{
@@ -12,7 +13,7 @@ function App() {
         color: '#fff',
       }}
     >
-      <LoanForm />
+      <LoanForm title={title} />
     </div>
   );
 }
