@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './LoanForm.css'; // Import the CSS file
+import PopupModel from './PopupModel';
 
 function LoanForm() {
   const [formData, setFormData] = useState({
@@ -91,6 +92,7 @@ function LoanForm() {
           Submit
         </button>
       </form>
+      <PopupModel />
     </div>
   );
 }
