@@ -26,7 +26,6 @@ function LoanForm() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          alert('Form submitted successfully!');
         }}
       >
         <h1>Requesting a Loan</h1>
