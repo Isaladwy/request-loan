@@ -24,8 +24,8 @@ function LoanForm({ title }) {
     );
   }, [formData]);
 
-  function handlePhoneChange(phone) {
-    setFormData({...formData, phone });
+  function handlePhoneChange(value) {
+    setFormData({...formData, phone: value });
   }
 
   return (
