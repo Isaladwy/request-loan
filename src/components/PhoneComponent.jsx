@@ -1,5 +1,5 @@
 import './LoanForm.css'
-function MyComponent({value, handlechange, currentInputs}) {
+function PhoneComponent({value, handlechange, currentInputs}) {
   return (
     <div className="loan-form-group">
           <label>Phone</label>
@@ -16,4 +16,4 @@ function MyComponent({value, handlechange, currentInputs}) {
   )
 }
 
-export default MyComponent
+export default PhoneComponent

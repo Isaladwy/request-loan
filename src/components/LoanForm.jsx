@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './LoanForm.css'; // Import the CSS file
 import PopupModel from './PopupModel';
-import MyComponent from './MyComponent';
+import PhoneComponent from './PhoneComponent';
 
 function LoanForm({ title }) {
   const [formData, setFormData] = useState({
@@ -46,7 +46,7 @@ function LoanForm({ title }) {
             }}
           />
         </div>
-        <MyComponent currentInputs={formData} value={formData.phone} handlechange={setFormData} />
+        <PhoneComponent currentInputs={formData} value={formData.phone} handlechange={setFormData} />
         <div className="loan-form-group">
           <label>Age</label>
           <input
