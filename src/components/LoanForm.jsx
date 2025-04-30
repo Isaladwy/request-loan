@@ -24,6 +24,10 @@ function LoanForm({ title }) {
     );
   }, [formData]);
 
+  function handlePhoneChange(phone) {
+    setFormData({...formData, phone });
+  }
+
   return (
     <div className="loan-form-container">
       <h1>{title}</h1>
@@ -46,7 +50,7 @@ function LoanForm({ title }) {
             }}
           />
         </div>
-        <PhoneComponent currentInputs={formData} value={formData.phone} handlechange={setFormData} />
+        <PhoneComponent currentInputs={formData} value={formData.phone} handlechange={handlePhoneChange} />
         <div className="loan-form-group">
           <label>Age</label>
           <input
